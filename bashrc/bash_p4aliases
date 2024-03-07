@@ -1,0 +1,9 @@
+function p4_aliases()
+{
+	echo "WARNING: no P4 aliases implemented"
+	
+	alias b='echo "P4: alias no implemented"'
+	alias log='echo "P4: alias no implemented"'
+	
+	echo "P4 aliases loaded"
+}

@@ -1,0 +1,7 @@
+function git_aliases()
+{
+	alias b='git branch'
+	alias log='git log'
+	
+	echo "Git aliases loaded"
+}

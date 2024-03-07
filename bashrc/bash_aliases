@@ -1,0 +1,28 @@
+# Some common userfriendly aliases
+alias free='free -h'
+alias du='du -h'
+
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+fi
+
+for f in ~/.bash_{gitaliases,p4aliases}; do
+	if [ -f $f ]; then
+		. $f
+	else
+		echo "File '$f' does not exist"
+	fi
+done
+
+# Any configuration that can be epplied e.g.: invoke git_aliases
+if [ -f ~/.bash_config ]; then
+	. ~/.bash_config
+fi
+
+unset color_prompt
